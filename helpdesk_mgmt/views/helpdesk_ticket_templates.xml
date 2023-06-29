@@ -76,7 +76,7 @@
                     <table class="table table-hover o_portal_my_doc_table">
                         <thead>
                             <tr class="active">
-                                <th>By</th>
+                                <!-- <th>By</th> -->
                                 <th>Number</th>
                                 <th>Name</th>
                                 <th>Category</th>
@@ -88,9 +88,9 @@
                         </thead>
                         <t t-foreach="tickets" t-as="ticket">
                             <tr>
-                                <td>
+                                <!-- <td>
                                     <t t-esc="ticket.partner_id.name" />
-                                </td>
+                                </td> -->
                                 <td>
                                     <t t-esc="ticket.number" />
                                 </td>
