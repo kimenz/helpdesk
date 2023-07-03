@@ -13,7 +13,6 @@ odoo.define("helpdesk_ticket_templates.js", function (require) {
     $("select[name='locations']").on("change", function () {
         var locations = this;
         var locationssel = locations.options[locations.selectedIndex];
-
         var equipments_ids = locationssel.getAttribute("equipment_ids");
         if (equipments_ids === null) equipments_ids = "";
 

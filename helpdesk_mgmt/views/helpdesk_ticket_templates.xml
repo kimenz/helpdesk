@@ -156,7 +156,7 @@
                                 <strong>Last Stage Update:</strong>
                                 <span t-field="ticket.last_stage_update" />
                                 <br />
-                                <t t-foreach="closed_stages" t-as="stage">
+                                <!-- <t t-foreach="closed_stages" t-as="stage">
                                     <form
                                         method="GET"
                                         t-if="not ticket.closed_date"
@@ -180,7 +180,7 @@
                                             <span t-field="stage.name" />
                                         </button>
                                     </form>
-                                </t>
+                                </t> -->
                             </div>
                             <div class="col-md-6">
                                 <strong>DATOS DEL EQUIPO</strong>

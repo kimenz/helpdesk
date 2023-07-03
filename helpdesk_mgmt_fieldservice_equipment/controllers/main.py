@@ -36,7 +36,7 @@ class HelpdeskTicketControllerInherit(HelpdeskTicketController):
         partner_id = http.request.env.user.partner_id
         if partner_id.parent_id:
             partner_id = partner_id.parent_id
-        locations = http.request.env["fsm.location"].search(
+        locations = http.request.env["fsm.location"].sudo().search(
             [
                 ("active", "=", True),
                 ("owner_id", "=", partner_id.id),
