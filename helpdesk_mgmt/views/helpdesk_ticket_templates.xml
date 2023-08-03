@@ -156,6 +156,9 @@
                                 <strong>Last Stage Update:</strong>
                                 <span t-field="ticket.last_stage_update" />
                                 <br />
+                                <b>Criado por:</b>
+                                <t t-esc="ticket.create_uid.name" />
+                                <br />
                                 <!-- <t t-foreach="closed_stages" t-as="stage">
                                     <form
                                         method="GET"
