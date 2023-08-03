@@ -44,7 +44,7 @@ class HelpdeskTicketControllerInherit(HelpdeskTicketController):
             ]
         )
         equipments_ids = http.request.env["fsm.equipment"].search(
-            [("active", "=", True), ("owned_by_id", "=", partner_id.id)]
+            [("active", "=", True), ("owned_by_id", "=", partner_id.id)], order="name"
         )
 
         email = http.request.env.user.email
