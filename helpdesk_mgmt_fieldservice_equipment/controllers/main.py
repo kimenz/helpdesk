@@ -12,6 +12,13 @@ _logger = logging.getLogger(__name__)
 
 
 class HelpdeskTicketControllerInherit(HelpdeskTicketController):
+
+    def _get_partner(self):
+        partner_id = http.request.env.user.partner_id
+        while partner_id.parent_id:
+            partner_id = partner_id.parent_id
+        return partner_id
+
     @http.route("/ticket/close", type="http", auth="user")
     def support_ticket_close(self, **kw):
         """Close the support ticket"""
@@ -33,9 +40,7 @@ class HelpdeskTicketControllerInherit(HelpdeskTicketController):
         categories = http.request.env["helpdesk.ticket.category"].search(
             [("active", "=", True)]
         )
-        partner_id = http.request.env.user.partner_id
-        if partner_id.parent_id:
-            partner_id = partner_id.parent_id
+        partner_id = self._get_partner()
         locations = http.request.env["fsm.location"].sudo().search(
             [
                 ("active", "=", True),
